@@ -7,13 +7,28 @@ public class Game {
 	Input input;
 	public char currentDirection=' ';
 	public boolean isGameOver=false;
+	public int difficulty;
 	public void enterOptions(){
 		System.out.print("\n\n\t\t\t\tChoose the size of the field : ");
 		snake.boardSize=sc.nextInt();
 		snake.init();
 		direction=Direction.direction;
 		input=new Input();
-		
+		System.out.print("\n\n\t\t\t\tChoose the difficulty\n\t\t\t\te - easy\n\t\t\t\tm - medium\n\t\t\t\th - hard");
+		char diff=sc.next().charAt(0);
+		switch(diff){
+			case 'e':
+			difficulty=600;
+			break;
+			case 'm':
+			difficulty=400;
+			break;
+			case 'h':
+			difficulty=200;
+			break;
+			default:
+			difficulty=400;
+		}
 	}
 	
 	public void play() {
